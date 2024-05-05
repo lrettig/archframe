@@ -1,3 +1,4 @@
+import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev'
@@ -65,3 +66,10 @@ app.frame('/welcome/:requestId/:recipient/:amount', (c) => {
 })
 
 devtools(app, { serveStatic })
+
+const port = parseInt(process.env.PORT || '3000', 10)
+serve({
+  fetch: app.fetch,
+  port: port,
+})
+console.log(`Server is running on port ${port}`)

@@ -3,12 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "frog dev"
+    "dev": "frog dev",
+    "serve": "tsx src/index.tsx"
   },
   "dependencies": {
     "@hono/node-server": "latest",
     "frog": "latest",
-    "hono": "^4"
+    "hono": "^4",
+    "tsx": "^4.9.1"
   },
   "devDependencies": {
     "typescript": "latest"
